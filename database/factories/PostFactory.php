@@ -26,7 +26,7 @@ class PostFactory extends Factory
            'title' => $this->faker->realText($maxNbChars = 30, $indexSize = 2),
            'slug' => $this->faker->realText($maxNbChars = 40, $indexSize = 2),
            'body' => $this->faker->realText($maxNbChars = 500, $indexSize = 2),
-           'img' => './storage/app/public/img/prova.png',
+           'img' => 'public/img/prova.jpg',
            'user_id' => User::factory()
         ];
     }

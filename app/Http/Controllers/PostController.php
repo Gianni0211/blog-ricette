@@ -38,7 +38,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
+      
+     
+
+        Post::create([
+            'title' => $request->input('title'),
+            'slug' => $request->input('slug'),
+            'body' => $request->input('body'),
+            'img'=> $request->file('img')->store('public/img') 
+        ]);
 
         return redirect(route('post.index'));
     }
@@ -62,6 +70,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        
         return view('post.edit', compact('post'));
     }
 
@@ -74,6 +83,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+  
         $post->update($request->all());
 
         return redirect(route('post.index'));
