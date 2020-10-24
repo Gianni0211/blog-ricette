@@ -12,6 +12,11 @@
 
   {{ $post->title }}
   {{ $post->id }}
+  @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)
+      <form action="{{route('post.destroy', ['post'=>$post])}}" method="POST">@csrf @method('DELETE') <button type="submit">Elimina post</button></form>
+ 
+  @endif
+ <a href="{{route('post.show', ['post'=>$post] )}}"> vedi post</a>
  </h1>
 
 </div>

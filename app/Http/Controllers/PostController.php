@@ -3,10 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+use App\Mail\NewPostMail;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
+
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,6 +44,8 @@ class PostController extends Controller
      */
     public function create()
     {
+
+
         return view('post.create');
     }
 
@@ -36,17 +55,24 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-      
-     
 
-        Post::create([
+        $bag = Post::create([
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
             'body' => $request->input('body'),
-            'img'=> $request->file('img')->store('public/img') 
+            'img' => $request->file('img')->store('public/img')
         ]);
+
+        //Trovo tutti gli user
+        // foreach(User::all() as $user){
+        //     Mail::to($user->email)->send(new NewPostMail($bag)); 
+        // }
+        /*
+            il problema qui è che php è sincrono, qundi finche non finisce di mandare tutte le email la pagina resta bloccata
+            Si possono creare Jobs e queue 
+        */
 
         return redirect(route('post.index'));
     }
@@ -70,35 +96,40 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        
+            
         return view('post.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     * PROTECTED
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-  
-        $post->update($request->all());
+        if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id) {
+            $post->update($request->all());
+        }
 
         return redirect(route('post.index'));
     }
 
     /**
      * Remove the specified resource from storage.
-     *
+     *  PROTECTED
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
     {
-        $post->delete();
 
-       return redirect(route('post.index'));
+        if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id) {
+            $post->delete();
+            return redirect(route('post.index'));
+        }
+
+        return view('post.mail.newpost');
     }
 }
