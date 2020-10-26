@@ -58,25 +58,26 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
 
-       
         $bag = Post::create([
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
             'body' => $request->input('body'),
-            'img' => $request->file('img')->store('public/img'), 
-            'user_id'=> Auth::user()->id
+            'img' => $request->file('img')->store('public/img')
         ]);
 
-        //invio email alla creazione del nuovo post (solo a admin)
+        //Trovo tutti gli user
         foreach(User::all() as $user){
             if($user->role == 'admin'){
                 
                 Mail::to($user->email)->send(new NewPostMail($bag)); 
             }
         }
-     
+        /*
+            il problema qui è che php è sincrono, qundi finche non finisce di mandare tutte le email la pagina resta bloccata
+            Si possono creare Jobs e queue 
+        */
 
-        return redirect(route('post.index'))->with(['message','Articolo creato']);
+        return redirect(route('post.index'));
     }
 
     /**
@@ -113,12 +114,9 @@ class PostController extends Controller
     {
         if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id) {
             $post->update($request->all());
-             return redirect(route('post.index'))->with(['message','Articolo aggiornato']);
         }
-    
-        return abort(401);
 
-       
+        return redirect(route('post.index'));
     }
 
     /**
@@ -135,6 +133,6 @@ class PostController extends Controller
             return redirect(route('post.index'));
         }
 
-        return redirect(route('post.index'))->with(['message','Articolo eliminato']);
+        return view('post.mail.newpost');
     }
 }
