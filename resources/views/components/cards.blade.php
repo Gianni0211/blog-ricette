@@ -12,33 +12,14 @@
         </a>
     </div>
     <div class="col-md-5">
-<<<<<<< HEAD
-      <h3>{{$post->title}}</h3>
-      <p>{{$post->body}}</p>
-      <h4 class="mb-4 text-primario"><strong class="test-secondario">Autore: </strong>{{$post->user->name}}</h4>
-      <a class="btn-custom p-3 mt-sm-3 mt-md-4 text-decoration-none" href="{{ route('post.show', ['post' => $post]) }}">Scopri di più</a>
-=======
         <h3>{{ $post->title }}</h3>
         <p>{{ $post->body }}</p>
         <p class="small">{{ $post->user->name }}</p>
         <a class="btn-custom p-3 mt-sm-3 mt-md-3" href="{{ route('post.show', ['post' => $post]) }}">Scopri di più</a>
->>>>>>> ec08cee69cf22fd723e6e5837cc6d3b218d9a845
     </div>
 </div>
 
 
-<<<<<<< HEAD
-    @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)
-    <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">
-      @csrf
-        @method('DELETE')
-        <button type="submit" class="btn-delete p-3">Elimina post</button>
-    </form>
-
-    <a href="{{ route('post.edit', ['post' => $post]) }}" class="text-decoration-none p-3 btn-edit ml-3">Modifica post</a>
-
-    @endif
-=======
 @guest
 
    
@@ -53,4 +34,3 @@
 
     @endif
 @endguest
->>>>>>> ec08cee69cf22fd723e6e5837cc6d3b218d9a845

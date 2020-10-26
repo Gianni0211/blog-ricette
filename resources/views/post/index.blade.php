@@ -240,7 +240,7 @@
         <!-- end box 6 secodna categoria -->
 
 
-<x-galleria />
+<x-gallery />
 
         
 

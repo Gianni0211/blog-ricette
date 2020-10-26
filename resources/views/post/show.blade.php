@@ -19,7 +19,9 @@
                         @endif
             </div>
             
-            <x-sidebar />
+          <x-sidebar
+          :post="$post"
+          />
         </div>
   
     </div>
