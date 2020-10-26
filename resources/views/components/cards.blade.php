@@ -14,10 +14,10 @@
     <div class="col-md-5">
       <h3>{{$post->title}}</h3>
       <p>{{$post->body}}</p>
-    <h4 class="mb-4 text-primario">{{$post->user->name}}</h4>
-    <a class="btn-custom p-3 mt-sm-3 mt-md-3 text-decoration-none" href="{{ route('post.show', ['post' => $post]) }}">Scopri di più</a>
+      <h4 class="mb-4 text-primario">{{$post->user->name}}</h4>
+      <a class="btn-custom p-3 mt-sm-3 mt-md-3 text-decoration-none" href="{{ route('post.show', ['post' => $post]) }}">Scopri di più</a>
     </div>
-  </div>
+</div>
 
 
     @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)

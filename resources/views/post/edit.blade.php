@@ -1,8 +1,8 @@
 <x-app>
-    <h1>edit</h1>
-    <div class="container">
+    <div class="container top-login">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 ">
+                <h1 class="text-primario mb-5">Modifica il tuo post</h1>
                 <form action="{{ route('post.update', compact('post')) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -18,9 +18,9 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Corpo articolo</label>
-                        <textarea name="body" id="body" cols="30" rows="10">{{ $post->body }}</textarea>
+                        <textarea name="body" id="body" class="form-control" rows="3">{{ $post->body }}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-info">Modifica</button>
+                    <button type="submit" class="btn-edit p-2">Modifica articolo</button>
                 </form>
             </div>
         </div>

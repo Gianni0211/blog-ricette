@@ -9,7 +9,7 @@
 
           <!-- Grid column -->
           <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <p class="mb-0 h3 text-white">Seguimi sui social</p>
+            <p class="mb-0 h3 text-white">Seguici sui social</p>
           </div>
           <!-- Grid column -->
 
@@ -63,7 +63,7 @@
             <p>
               <i class="fas fa-envelope mr-3"></i> info@example.com</p>
               <p>
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <i class="fas fa-phone mr-3 fa-flip-horizontal"></i> + 01 234 567 88</p>
                 <p>
                   <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
 

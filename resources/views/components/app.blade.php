@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
+    <script src="https://kit.fontawesome.com/0273f52d45.js" crossorigin="anonymous"></script>
+
     {{-- Foglio stile nostro --}}
     <link rel="stylesheet" href="{{URL::asset('css/app.css')}}">
   </head>
