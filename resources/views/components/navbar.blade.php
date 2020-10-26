@@ -68,11 +68,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        {{-- <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
           <a class="nav-link btn-custom text-white" href="{{route('post.create')}}">CREA NUOVO POST</a>
           </li>
-          {{-- <li class="nav-item">
+         <li class="nav-item">
             <a class="nav-link" href="#">SECONDI</a>
           </li>
           <li class="nav-item">
@@ -80,9 +80,11 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">DOLCI</a>
-          </li> --}}
-        </ul> 
+          </li>
+        </ul> --}}
       </div>
+      <a class="nav-link btn-nav mr-5" href="{{route('post.create')}}">CREA NUOVO POST</a>
+
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
         @guest

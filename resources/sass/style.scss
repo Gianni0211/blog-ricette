@@ -46,6 +46,12 @@ h3 {
     border-color: var(--colore-primario);
 }
 
+.btn-nav {
+    color:white;
+    background-color: var(--colore-primario);
+    border-color: white;
+}
+
 .btn-custom:hover {
     color: #fff;
     background-color:var(--colore-primario);
@@ -240,3 +246,4 @@ button.btn-edit {
 .page-link {
     color: var(--colore-primario) !important;
 }
+
