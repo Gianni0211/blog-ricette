@@ -203,3 +203,35 @@ h3 {
   .bg-secondario-transp {
       background-color:#2b2c28bf;
   }
+
+  .top-login {
+      margin-top:100px;
+  }
+
+
+  .bg-slider {
+      background-image: url(/storage/app/public/img/prova.jpg);
+  } 
+
+  button.btn-delete {
+      color:white;
+      background-color: #c75c5c;
+      border:none;
+  }
+
+  a.btn-edit {
+    color:white;
+    background-color: #efa621;
+    border:none;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff !important;
+    background-color: var(--colore-primario) !important;
+    border-color: var(--colore-secondario) !important;
+}
+
+.page-link {
+    color: var(--colore-primario) !important;
+}

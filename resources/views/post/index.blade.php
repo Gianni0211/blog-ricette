@@ -3,17 +3,10 @@
 
     <div class="container">
         <div class="row">
-
-
         @if (Session::has('message'))
                 <div class="alert alert-success">{{ 
                 session('message') }}</div>
         @endif
-
-
-
-           
-            
 
         </div>
         
@@ -32,22 +25,20 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('Media/1.jpg">
+        <div class="carousel-item active bg-slider ">
           <div class="carousel-caption d-md-block bg-secondario-transp">
             <h3 class="display-4">Titolo articolo 1</h3>
             <p class="lead">This is a description for the first slide.</p>
           </div>
         </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('Media/2.jpg')">
+        <div class="carousel-item bg-slider"  >
           <div class="carousel-caption d-md-block bg-secondario-transp">
             <h3 class="display-4">Titolo articolo 2</h3>
             <p class="lead">This is a description for the second slide.</p>
           </div>
         </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('Media/3.jpg')">
+  
+        <div class="carousel-item bg-slider" >
           <div class="carousel-caption d-md-block bg-secondario-transp">
             <h3 class="display-4 ">Titolo articolo 3</h3>
             <p class="lead">This is a description for the third slide.</p>
@@ -78,69 +69,31 @@
 
             @foreach ($posts as $post)
 
-                <div class="row mb-sm-5 mb-md-5 mt-sm-5 mt-md-5">
-
-                    
+                <div class="row mb-sm-5 mb-md-5 mt-sm-5 mt-md-5">                  
                         <x-cards
                         :post='$post'
                         
                         />
-                        
-
-    
-              
-                    
-
                 </div>
 
             @endforeach
 
               <!-- Pagination -->
-              <div class="col-12">
+              <div class="row pagination justify-content-center">
             
                 {{-- MOSTRA I LINK PER NAVIGARE TRA LE PAGINE --}}
                  {{$posts->links()}}
-            </div>
+              
+                </div>
 
-            </div>
+          </div>
             <!-- /.container -->
 
 
           </div>
+          <x-sidebar />
 
-
-          <!-- sidebar -->
-
-          <div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar">
-
-            <div class=" p-3 border-bottom text-center">
-              <img src="Media/mica_cook.png" class="img-fluid mb-md-4" alt="">
-              <h3 class="mt-2 text-center mb-3">Micaela Cataldo</h3>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur fugiat corporis veritatis, quidem distinctio odio. </p>
-            </div>
-            <div class="box2 mt-3 border-bottom pb-4 mb-md-4">
-              <h6 class="font-weight-bold text-primario h4 text-center mb-4">Ultime ricette</h6>
-
-              <p>
-                <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 1</a>
-              </p>
-              <p>
-                <i class="fas fa-hamburger text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 2</a>
-              </p>
-              <p>
-                <i class="fas fa-pizza-slice text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 3</a>
-              </p>
-              <p>
-                <i class="fas fa-hotdog text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 4</a>
-              </p>
-            </div>
-
-
-
-          </div>
-
-          <!-- end sidebar  -->
-        </div>
+         </div>
       </div>
 
       <!-- fine articoli verticali -->
@@ -263,45 +216,8 @@
         <!-- end box 6 secodna categoria -->
 
 
+<x-galleria />
 
-
-        <!-- galleria -->
-
-
-        <!-- Page Content -->
-        <div class="container">
-
-          <p class="font-weight-light text-center text-lg-left mt-md-5 mt-4 mb-0 h3 test-secondario font-weight-bold">Photo gallery</p>
-
-          <hr class="mt-2 mb-5">
-
-          <div class="row text-center text-lg-left">
-
-            <div class="col-lg-3 col-md-3 col-6">
-              <a href="#" class="d-block mb-4 h-100 ">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
-              </a>
-            </div>
-
-          </div>
-
-
-        </div>
-        <!-- and galleria -->
+        
 
 </x-app>
