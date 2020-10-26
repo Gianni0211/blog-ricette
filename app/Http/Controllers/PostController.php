@@ -33,7 +33,7 @@ class PostController extends Controller
     {
 
         //post per pagina       ↓
-        $posts = Post::paginate(5);
+        $posts = Post::paginate(4);
         return view('post.index', compact('posts'));
     }
 
