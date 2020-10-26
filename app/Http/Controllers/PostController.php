@@ -33,7 +33,7 @@ class PostController extends Controller
     {
 
         //post per pagina       ↓
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(5);
         return view('post.index', compact('posts'));
     }
 
@@ -62,7 +62,8 @@ class PostController extends Controller
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
             'body' => $request->input('body'),
-            'img' => $request->file('img')->store('public/img')
+            'img' => $request->file('img')->store('public/img'),
+            'user_id' => Auth::user()->id
         ]);
 
         //Trovo tutti gli user
@@ -77,7 +78,7 @@ class PostController extends Controller
             Si possono creare Jobs e queue 
         */
 
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message', 'Post creato');
     }
 
     /**
@@ -116,7 +117,7 @@ class PostController extends Controller
             $post->update($request->all());
         }
 
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message', 'Post Aggiornato');
     }
 
     /**
@@ -133,6 +134,6 @@ class PostController extends Controller
             return redirect(route('post.index'));
         }
 
-        return view('post.mail.newpost');
+        return redirect(route('post.index'))->with('message', 'Post Eliminato');
     }
 }
