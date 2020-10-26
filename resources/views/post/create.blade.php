@@ -1,11 +1,11 @@
 <x-app>
-    <h1>Create</h1>
   
-        <div class="container">
+        <div class="container top-login">
             <div class="row">
                 <div class="col-12">
-                    <form action="{{ route('post.store')}}" method="POST"  enctype="multipart/form-data"
-                    >
+
+                    <h1 class="text-primario mb-4">Crea un nuovo articolo</h1>
+                    <form action="{{ route('post.store')}}" method="POST"  enctype="multipart/form-data">
                         @csrf
                      
                         <div class="form-group">
@@ -20,15 +20,14 @@
                         </div>
                         <div class="form-group">
                             <label for="body">Corpo articolo</label>
-                            <textarea name="body" id="body" cols="100" rows="10">{{ old('body')}}</textarea>
+                            <textarea name="body" id="body" class="form-control" rows="3">{{ old('body')}}</textarea>
                         </div>
                         <div class="form-group">
-                          <label for="img">Immagine</label>
+                          <label for="img">Carica la tua immagine quì</label>
                           <input type="file" class="form-control-file" name="img" id="img" placeholder="inserisci l'immagine" aria-describedby="file">
-                          <small id="file" class="form-text text-muted">Inserisci una foto</small>
                         </div>
                         
-                        <button type="submit" class="btn btn-info">Crea</button>
+                        <button type="submit" class="btn-custom p-3 text-uppercase">Crea nuovo articolo</button>
                     </form>
                 </div>
             </div>

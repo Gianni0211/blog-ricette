@@ -67,14 +67,12 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      {{-- <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">PRIMI
-              <span class="sr-only">(current)</span>
-            </a>
+          <a class="nav-link btn-custom text-white" href="{{route('post.create')}}">CREA NUOVO POST</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="#">SECONDI</a>
           </li>
           <li class="nav-item">
@@ -82,9 +80,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">DOLCI</a>
-          </li>
+          </li> --}}
         </ul> 
-      </div> --}}
+      </div>
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
         @guest

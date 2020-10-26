@@ -20,7 +20,12 @@
                         <label for="body">Corpo articolo</label>
                         <textarea name="body" id="body" class="form-control" rows="3">{{ $post->body }}</textarea>
                     </div>
-                    <button type="submit" class="btn-edit p-2">Modifica articolo</button>
+                    {{-- <div class="form-group">
+                        <label for="img">Modifica la tua immagine quì</label>
+                        <input type="file" class="form-control-file" name="img" id="img" placeholder="inserisci l'immagine" aria-describedby="file">
+                      </div> --}}
+
+                    <button type="submit" class="btn-edit p-2 text-uppercase">Modifica articolo</button>
                 </form>
             </div>
         </div>
