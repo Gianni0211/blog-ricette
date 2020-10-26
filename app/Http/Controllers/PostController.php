@@ -32,8 +32,8 @@ class PostController extends Controller
     public function index()
     {
 
-
-        $posts = Post::all();
+        //post per pagina       ↓
+        $posts = Post::paginate(3);
         return view('post.index', compact('posts'));
     }
 
@@ -66,9 +66,12 @@ class PostController extends Controller
         ]);
 
         //Trovo tutti gli user
-        // foreach(User::all() as $user){
-        //     Mail::to($user->email)->send(new NewPostMail($bag)); 
-        // }
+        foreach(User::all() as $user){
+            if($user->role == 'admin'){
+                
+                Mail::to($user->email)->send(new NewPostMail($bag)); 
+            }
+        }
         /*
             il problema qui è che php è sincrono, qundi finche non finisce di mandare tutte le email la pagina resta bloccata
             Si possono creare Jobs e queue 
