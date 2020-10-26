@@ -63,7 +63,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondario fixed-top border-navbar">
     <div class="container">
-    <a class="navbar-brand" href="{{route('post.index')}}"><img src="Storage::url('img/cook.png');" class="img-fluid img-logo" alt="">Food Blog</a>
+    <a class="navbar-brand" href="{{route('post.index')}}"><img src="{{Storage::url('img/cook.png')}}" class="img-fluid img-logo" alt="logo">Food Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
