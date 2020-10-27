@@ -6,6 +6,10 @@
                 <img src={{Storage::url($post->img)}} class='img-fluid' alt="prova">
                 <h2 class="test-secondario mt-3">{{ $post->slug }}</h2>
                 <p class="lead mt-4">{{ $post->body }}</p>
+
+                @guest
+                    
+                @else
                         @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)
         
                             <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">
@@ -17,6 +21,8 @@
                             <a href="{{ route('post.edit', ['post' => $post]) }}" class="text-decoration-none p-3 btn-edit">Modifica post</a>
                             
                         @endif
+                        
+                @endguest
             </div>
             
           <x-sidebar
