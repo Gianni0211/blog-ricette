@@ -11151,3 +11151,14 @@ button.btn-edit {
   color: var(--colore-primario) !important;
 }
 
+.carousel-inner .carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+

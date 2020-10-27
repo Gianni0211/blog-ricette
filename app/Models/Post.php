@@ -37,6 +37,12 @@ class Post extends Model
 
         return $this->likes()->attach($user);
     }
+
+    static function mostLikedFour(){
+      
+       return  self::all()->sortByDesc('likes')->slice(0,4);
+     
+    }
     
 
     public function tags(){
