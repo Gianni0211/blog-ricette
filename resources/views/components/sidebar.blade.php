@@ -3,7 +3,7 @@
 ])
 
 
-<div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar">
+<div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar bg-sidebar">
 
     <div class=" p-3 border-bottom text-center">
       <img src="Media/mica_cook.png" class="img-fluid mb-md-4" alt="">

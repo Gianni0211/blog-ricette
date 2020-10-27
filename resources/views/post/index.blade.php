@@ -94,7 +94,7 @@
 
           {{-- SIDEBAR --}}
           
-          <div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar">
+          <div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar bg-sidebar">
 
             <div class=" p-3 border-bottom text-center">
               <img src="Media/mica_cook.png" class="img-fluid mb-md-4" alt="">
@@ -133,19 +133,14 @@
       </div> --}}
       <!-- and label category -->
 
-      <!-- box 6 seconda categoria -->
-      {{-- <div class="container mt-5"> --}}
-
-        <!-- Page Heading -->
-
-
-        {{-- <div class="row">
+       <div class="container top">
+         <div class="row">
           <div class="col-lg-4 col-sm-6 mb-4">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="https://picsum.photos/700/400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#" class="text-primario">Titolo articolo 1</a>
+                  <a href="#" class="text-primario text-decoration-none">Titolo articolo 1</a>
                 </h4>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
                 </div>
@@ -210,7 +205,13 @@
           <!-- /.row -->
 
           <!-- Pagination -->
-          <ul class="pagination justify-content-center">
+          <div class="row pagination justify-content-center mt-3">
+          {{-- MOSTRA I LINK PER NAVIGARE TRA LE PAGINE --}}
+          {{$posts->links()}}
+          </div>
+
+          <!-- Pagination -->
+          {{-- <ul class="pagination justify-content-center">
             <li class="page-item">
               <a class="page-link text-primario" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
@@ -232,9 +233,9 @@
                 <span class="sr-only">Next</span>
               </a>
             </li>
-          </ul>
+          </ul> --}}
 
-        </div> --}}
+        </div>
         <!-- end box 6 secodna categoria -->
 
 
