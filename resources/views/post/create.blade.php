@@ -5,6 +5,15 @@
                 <div class="col-12">
 
                     <h1 class="text-primario mb-4">Crea un nuovo articolo</h1>
+                    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                     <form action="{{ route('post.store')}}" method="POST"  enctype="multipart/form-data">
                         @csrf
                      
@@ -35,3 +44,4 @@
     
  
 </x-app>
+

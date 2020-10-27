@@ -15,13 +15,16 @@
                 @else
                         @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)
         
-                            <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">
-                            @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-delete p-3">Elimina post</button>
-                            </form>
-        
-                            <a href="{{ route('post.edit', ['post' => $post]) }}" class="text-decoration-none p-3 btn-edit">Modifica post</a>
+                            <div class="d-flex justify-content-start">
+                                <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">
+                                    @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn-delete p-3">Elimina post</button>
+                                    </form>
+                
+                                    <a href="{{ route('post.edit', ['post' => $post]) }}" class="text-decoration-none p-3 btn-edit ml-3">Modifica post</a>
+                            </div>
+                            
                             
                         @endif
                         

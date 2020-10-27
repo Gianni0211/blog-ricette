@@ -45,8 +45,7 @@ class PostController extends Controller
      */
     public function create()
     {
-       
-       
+        
         return view('post.create');
     }
 
@@ -59,6 +58,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
 
+       
         $bag = Post::create([
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
@@ -74,12 +74,9 @@ class PostController extends Controller
                 Mail::to($user->email)->send(new NewPostMail($bag)); 
             }
         }
-        /*
-            il problema qui è che php è sincrono, qundi finche non finisce di mandare tutte le email la pagina resta bloccata
-            Si possono creare Jobs e queue 
-        */
+        
 
-        return redirect(route('post.index'))->with('message', 'Post creato');
+        return redirect(route('post.index'));
     }
 
     /**

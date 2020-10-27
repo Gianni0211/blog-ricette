@@ -103,7 +103,7 @@
               
               @foreach ($lastPosts as $lastPost)
               <p>
-              <i class="fas fa-bacon text-primario h4"></i> <a class="test-secondario" href="{{route('post.show', $lastPost)}}">{{$lastPost->title}}</a>
+              <i class="fa fa-user text-primario h4"></i> <a class="test-secondario" href="{{route('post.show', $lastPost)}}">{{$lastPost->title}}</a>
               </p>
              
              
