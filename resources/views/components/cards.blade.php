@@ -26,7 +26,7 @@
 @else
     @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)
         <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">@csrf
-            @method('DELETE') <button type="submit">Elimina post</button></form>
+            @method('DELETE') <button class="btn-delete p-3" type="submit">Elimina post</button></form>
 
         <a href="{{ route('post.edit', ['post' => $post]) }}" class="text-decoration-none p-3 btn-edit ml-3">Modifica post</a>
 
