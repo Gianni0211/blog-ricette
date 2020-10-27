@@ -100,19 +100,14 @@
             </div>
             <div class="box2 mt-3 border-bottom pb-4 mb-md-4">
               <h6 class="font-weight-bold text-primario h4 text-center mb-4">Ultime ricette</h6>
-        
+              
+              @foreach ($lastPosts as $lastPost)
               <p>
-                <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 1</a>
+              <i class="fas fa-bacon text-primario h4"></i> <a class="test-secondario" href="{{route('post.show', $lastPost)}}">{{$lastPost->title}}</a>
               </p>
-              <p>
-                <i class="fas fa-hamburger text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 2</a>
-              </p>
-              <p>
-                <i class="fas fa-pizza-slice text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 3</a>
-              </p>
-              <p>
-                <i class="fas fa-hotdog text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 4</a>
-              </p>
+             
+             
+              @endforeach
             </div>
         
           </div>
