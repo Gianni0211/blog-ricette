@@ -138,7 +138,7 @@ class PostController extends Controller
     }
 
     public function likePost(Post $post){
-        $post->addLikeToPost(Auth::user());
+        $post->toggleLikeToPost(Auth::user());
         return redirect()->back();
     }
 }

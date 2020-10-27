@@ -9,7 +9,7 @@
 
 
                 <p>Piace a {{$post->likesCount()}} persone</p> 
-            <a href="{{route('post.like', compact('post'))}}">like</a>
+            <a href="{{route('post.like', compact('post'))}}" >like</a>
                 @guest
                     
                 @else

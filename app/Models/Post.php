@@ -25,7 +25,7 @@ class Post extends Model
         return $this->likes->count();
     }
 
-    public function addLikeToPost($user){
+    public function toggleLikeToPost($user){
 
         //Togle like
         foreach( $this->likes as $like){
