@@ -268,3 +268,19 @@ a.btn-like {
 .top {
     margin-top:80px;
 }
+
+
+.carousel-inner {
+    & .carousel-item{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+        
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+}
+

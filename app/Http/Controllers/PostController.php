@@ -32,11 +32,12 @@ class PostController extends Controller
      */
     public function index()
     {
-
+       
+        
         //post per pagina       ↓
         $posts = Post::paginate(4);
         $lastPosts = Post::orderBy('created_at', 'desc')->paginate(4);
-        return view('post.index', compact('posts'), ['post'=>$posts, 'lastPosts' => $lastPosts]);
+        return view('post.index', compact('posts'), ['post'=>$posts, 'lastPosts' => $lastPosts, 'mostLikedPosts' => Post::mostLikedFour()->toArray()]);
     }
 
     /**
