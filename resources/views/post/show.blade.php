@@ -7,6 +7,8 @@
                 <h2 class="test-secondario mt-3">{{ $post->slug }}</h2>
                 <p class="lead mt-4">{{ $post->body }}</p>
 
+
+                <p>Piace a {{$post->likesCount()}} persone</p>
                 @guest
                     
                 @else
@@ -28,6 +30,8 @@
           <x-sidebar
           :post="$post"
           />
+
+          
         </div>
   
     </div>
