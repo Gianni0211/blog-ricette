@@ -26,8 +26,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 
+
 Route::middleware(['auth'])->group(function () {
-    Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+
+
+   
+Route::get('/create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
     Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
     Route::put('/post/{post}/update', [PostController::class, 'update'])->name('post.update');
