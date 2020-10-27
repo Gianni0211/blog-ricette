@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\User;
 use App\Mail\NewPostMail;
@@ -46,8 +47,8 @@ class PostController extends Controller
     public function create()
     {
        
-       
-        return view('post.create');
+       $tags = Tag::all();
+        return view('post.create', compact('tags'));
     }
 
     /**
@@ -59,7 +60,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
 
-        $bag = Post::create([
+        $post = Post::create([
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
             'body' => $request->input('body'),
@@ -67,11 +68,16 @@ class PostController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
+        $tags = $request->input('tags');
+        foreach($tags as $tag){
+            $post->tags()->attach($tag);
+        }
+
         //Trovo tutti gli user
         foreach(User::all() as $user){
             if($user->role == 'admin'){
                 
-                Mail::to($user->email)->send(new NewPostMail($bag)); 
+                Mail::to($user->email)->send(new NewPostMail($post)); 
             }
         }
         /*
@@ -79,7 +85,7 @@ class PostController extends Controller
             Si possono creare Jobs e queue 
         */
 
-        return redirect(route('post.index'))->with('message', 'Post creato');
+        return redirect(route('post.index'));
     }
 
     /**

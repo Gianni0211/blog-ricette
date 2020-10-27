@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateTagsTable extends Migration
 {
@@ -19,6 +20,22 @@ class CreateTagsTable extends Migration
             
             $table->timestamps();
         });
+
+
+        $tags = [
+
+            'primi', 'secondi', 'contorni', 'dolci'
+
+
+        ];
+
+        foreach($tags as $tag){
+
+            $t = new Tag();
+            $t->name = $tag;
+            $t->save();
+        }
+
     }
 
     /**
