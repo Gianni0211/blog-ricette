@@ -11,24 +11,24 @@
       <p class="lead">{{ $post->slug }} </p>
     </div>
     <div class="box2 mt-3 border-bottom pb-4 mb-md-4">
-      {{-- <h6 class="font-weight-bold text-primario h4 text-center mb-4"></h6> --}}
+    {{-- Aggiunge il titolo di tutti i post dell'utente che ha scritto il post --}}
       @foreach ($post->user->posts as $post)
-      <h6 class="font-weight-bold text-primario h4 text-center mb-4">{{ $post->title }}</h6>
+      <a href="{{ route('post.show', ['post' => $post]) }}" class="font-weight-bold text-primario h4 text-center mb-4">{{ $post->title }}</a>
           
       @endforeach  
     
 
       <p>
-        <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 1</a>
+        <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario" href="#!">tag</a>
       </p>
       <p>
-        <i class="fas fa-hamburger text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 2</a>
+        <i class="fas fa-hamburger text-primario h4"></i></i> <a class="test-secondario" href="#!">tag</a>
       </p>
       <p>
-        <i class="fas fa-pizza-slice text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 3</a>
+        <i class="fas fa-pizza-slice text-primario h4"></i></i> <a class="test-secondario" href="#!">tag</a>
       </p>
       <p>
-        <i class="fas fa-hotdog text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 4</a>
+        <i class="fas fa-hotdog text-primario h4"></i> <a class="test-secondario" href="#!">tag</a>
       </p>
     </div>
 
