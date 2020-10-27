@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Post;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -50,7 +51,5 @@ class User extends Authenticatable
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
 
-    public function addLikeToPost(Post $post){
-        return $this->likes->attach($post);
-    }
+    
 }

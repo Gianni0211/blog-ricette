@@ -25,5 +25,17 @@ class Post extends Model
         return $this->likes->count();
     }
 
+    public function addLikeToPost($user){
+
+        //Togle like
+        foreach( $this->likes as $like){
+            if($like->id == $user->id){
+                return $this->likes()->detach($user);
+            }
+        }
+
+        return $this->likes()->attach($user);
+    }
+    
     
 }

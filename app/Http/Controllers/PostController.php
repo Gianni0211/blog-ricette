@@ -136,4 +136,9 @@ class PostController extends Controller
 
         return redirect(route('post.index'))->with('message', 'Post Eliminato');
     }
+
+    public function likePost(Post $post){
+        $post->addLikeToPost(Auth::user());
+        return redirect()->back();
+    }
 }

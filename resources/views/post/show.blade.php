@@ -8,7 +8,8 @@
                 <p class="lead mt-4">{{ $post->body }}</p>
 
 
-                <p>Piace a {{$post->likesCount()}} persone</p>
+                <p>Piace a {{$post->likesCount()}} persone</p> 
+            <a href="{{route('post.like', compact('post'))}}">like</a>
                 @guest
                     
                 @else
