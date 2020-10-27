@@ -8,8 +8,8 @@
                 <p class="lead mt-4">{{ $post->body }}</p>
 
 
-                <p>Piace a {{$post->likesCount()}} persone</p> 
-            <a href="{{route('post.like', compact('post'))}}" >like</a>
+                <p class="lead mb-4">Questo post piace a <span class="text-primario font-weight-bold">{{$post->likesCount()}}</span> persone</p> 
+                <a class="btn-like py-2 px-3" href="{{route('post.like', compact('post'))}}" ><i class="far fa-thumbs-up"></i> Like</a>
                 @guest
                     
                 @else
