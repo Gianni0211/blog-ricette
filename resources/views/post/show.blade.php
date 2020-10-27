@@ -8,14 +8,14 @@
                 <p class="lead mt-4">{{ $post->body }}</p>
 
 
-                <p class="lead mb-4">Questo post piace a <span class="text-primario font-weight-bold">{{$post->likesCount()}}</span> persone</p> 
-                <a class="btn-like py-2 px-3" href="{{route('post.like', compact('post'))}}" ><i class="far fa-thumbs-up"></i> Like</a>
+                <p class="lead mb-4" >Questo post piace a <span class="text-primario font-weight-bold">{{$post->likesCount()}}</span> persone</p> 
+                <a class="btn-like py-2 px-3 mb-5" href="{{route('post.like', compact('post'))}}" ><i class="far fa-thumbs-up"></i> Like</a>
                 @guest
                     
                 @else
                         @if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id)
         
-                            <div class="d-flex justify-content-start">
+                            <div class="d-flex justify-content-start mt-5">
                                 <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">
                                     @csrf
                                         @method('DELETE')
