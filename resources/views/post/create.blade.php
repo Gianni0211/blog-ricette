@@ -46,8 +46,8 @@
     </div>
 
 
-    <<<<<<< HEAD </x-app>
 
-        =======
+
+      
 </x-app>
->>>>>>> e66e3d2d1976cfa9bfd25d3963cad8ddba91c761
+
