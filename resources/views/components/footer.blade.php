@@ -1,47 +1,39 @@
-<!-- Footer -->
 <footer class="page-footer bg-secondario mt-5">
 
     <div class="bg-primario">
       <div class="container">
 
-        <!-- Grid row-->
         <div class="row py-4 d-flex align-items-center">
 
-          <!-- Grid column -->
           <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
             <p class="mb-0 h3 text-white">Seguici sui social</p>
           </div>
-          <!-- Grid column -->
 
-          <!-- Grid column -->
           <div class="col-md-6 col-lg-7 text-center text-md-right">
 
             <!-- Facebook -->
-            <a class="fb-ic text-decoration-none h4" href="" >
+            <a class="fb-ic text-decoration-none h4" href="#" >
               <i class="fab fa-facebook-f text-white mr-4"> </i>
             </a>
             <!-- Twitter -->
-            <a class="tw-ic text-decoration-none h4" href="" >
+            <a class="tw-ic text-decoration-none h4" href="#" >
               <i class="fab fa-twitter text-white mr-4"> </i>
             </a>
             <!-- Google +-->
-            <a class="gplus-ic text-decoration-none h4" href="" >
+            <a class="gplus-ic text-decoration-none h4" href="#" >
               <i class="fab fa-google-plus-g text-white mr-4"> </i>
             </a>
             <!--Linkedin -->
-            <a class="li-ic text-decoration-none h4" href="" >
+            <a class="li-ic text-decoration-none h4" href="#" >
               <i class="fab fa-linkedin-in text-white mr-4"> </i>
             </a>
             <!--Instagram-->
-            <a class="ins-ic text-decoration-none h4" href="" >
+            <a class="ins-ic text-decoration-none h4" href="#" >
               <i class="fab fa-instagram text-white"> </i>
             </a>
 
           </div>
-          <!-- Grid column -->
-
         </div>
-        <!-- Grid row-->
 
       </div>
     </div>
@@ -68,28 +60,24 @@
                   <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
 
                 </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
                 <div class="col-12 col-md-4 col-lg-4 col-xl-4 mx-auto mb-4 ">
 
                   <!-- Links -->
-                  <h6 class="text-uppercase font-weight-bold text-primario h4 hr-foot pb-2">Ricette</h6>
+                  <h6 class="text-uppercase font-weight-bold text-primario h4 hr-foot pb-2">Categorie</h6>
                   <p>
-                    <a class="text-white text-sm-left text-md-left" href="#!">Titolo ricetta 1</a>
+                    <i class="fas fa-utensils"></i> <a class="text-white text-sm-left text-md-left" href="#!"> Primi</a>
                   </p>
                   <p>
-                    <a class="text-white text-sm-left text-md-left" href="#!">Titolo ricetta 2</a>
+                    <i class="fas fa-utensils"></i> <a class="text-white text-sm-left text-md-left" href="#!"> Secondi</a>
                   </p>
                   <p>
-                    <a class="text-white text-sm-left text-md-left" href="#!">Titolo ricetta 3</a>
+                    <i class="fas fa-utensils"></i> <a class="text-white text-sm-left text-md-left" href="#!"> Contorni</a>
                   </p>
                   <p>
-                    <a class="text-white text-sm-left text-md-left" href="#!">Titolo ricetta 4</a>
+                    <i class="fas fa-utensils"></i> <a class="text-white text-sm-left text-md-left" href="#!"> Dolci</a>
                   </p>
 
                 </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
                 <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
 
                   <!-- Content -->
@@ -108,26 +96,12 @@
 
                     <!-- Sign in button -->
                     <button class="btn bg-primario text-white btn-block" type="submit">Registrati</button>
-
-
                   </form>
                   <!-- Default form subscription -->
                 </div>
-                <!-- Grid column -->
-
-
-
               </div>
-              <!-- Grid row -->
-
             </div>
-            <!-- Footer Links -->
-
-            <!-- Copyright -->
             <hr class="hr-line mt-0 mb-0">
             <div class="text-center text-white bg-foot py-3">© 2020 Tutti i diritti riservati. Privacy Policy. Cookie Policy.
             </div>
-            <!-- Copyright -->
-
           </footer>
-          <!-- Footer -->
