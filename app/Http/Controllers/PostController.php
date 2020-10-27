@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\User;
 use App\Mail\NewPostMail;
@@ -45,8 +46,14 @@ class PostController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         
         return view('post.create');
+=======
+       
+       $tags = Tag::all();
+        return view('post.create', compact('tags'));
+>>>>>>> e66e3d2d1976cfa9bfd25d3963cad8ddba91c761
     }
 
     /**
@@ -58,8 +65,12 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
 
+<<<<<<< HEAD
        
         $bag = Post::create([
+=======
+        $post = Post::create([
+>>>>>>> e66e3d2d1976cfa9bfd25d3963cad8ddba91c761
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
             'body' => $request->input('body'),
@@ -67,11 +78,16 @@ class PostController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
+        $tags = $request->input('tags');
+        foreach($tags as $tag){
+            $post->tags()->attach($tag);
+        }
+
         //Trovo tutti gli user
         foreach(User::all() as $user){
             if($user->role == 'admin'){
                 
-                Mail::to($user->email)->send(new NewPostMail($bag)); 
+                Mail::to($user->email)->send(new NewPostMail($post)); 
             }
         }
         

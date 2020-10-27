@@ -95,13 +95,27 @@
 
             <div class=" p-3 border-bottom text-center">
               <img src="Media/mica_cook.png" class="img-fluid mb-md-4" alt="">
-              <h3 class="mt-2 text-center mb-3">Micaela Cataldo</h3>
+              <h3 class="mt-2 text-center mb-3">Ultimo post caricato</h3>
               <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur fugiat corporis veritatis, quidem distinctio odio. </p>
             </div>
             <div class="box2 mt-3 border-bottom pb-4 mb-md-4">
+<<<<<<< HEAD
+              <h6 class="font-weight-bold text-primario h4 text-center mb-4">I migliori post</h6>
+        
+              <p>
+                <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario" href="#!">Titolo ricetta 1</a>
+              </p>
+              <p>
+                <i class="fas fa-hamburger text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 2</a>
+              </p>
+              <p>
+                <i class="fas fa-pizza-slice text-primario h4"></i></i> <a class="test-secondario" href="#!">Titolo ricetta 3</a>
+              </p>
+=======
               <h6 class="font-weight-bold text-primario h4 text-center mb-4">Ultime ricette</h6>
               
               @foreach ($lastPosts as $lastPost)
+>>>>>>> 657bdfef9eb9d2690b99ab5bbbcfae1b79ee9136
               <p>
               <i class="fa fa-user text-primario h4"></i> <a class="test-secondario" href="{{route('post.show', $lastPost)}}">{{$lastPost->title}}</a>
               </p>
