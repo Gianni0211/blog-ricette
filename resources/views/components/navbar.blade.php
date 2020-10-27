@@ -68,11 +68,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        {{-- <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-          <a class="nav-link btn-custom text-white" href="{{route('post.create')}}">CREA NUOVO POST</a>
+        <ul class="navbar-nav ml-auto text-white">
+          <li class="nav-item">
+            <a class="nav-link" href="#">PRIMI</a>
           </li>
-         <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="#">SECONDI</a>
           </li>
           <li class="nav-item">
@@ -81,19 +81,19 @@
           <li class="nav-item">
             <a class="nav-link" href="#">DOLCI</a>
           </li>
-        </ul> --}}
+        </ul>
       </div>
-      <a class="nav-link btn-nav mr-5" href="{{route('post.create')}}">CREA NUOVO POST</a>
+      <a class="nav-link btn-nav mx-5  text-white" href="{{route('post.create')}}">CREA NUOVO POST</a>
 
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
         @guest
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+          <a class="nav-link btn-login mr-3" href="{{ route('login') }}">{{ __('Accedi') }}</a>
         </li>
         @if (Route::has('register'))
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+          <a class="nav-link btn-login" href="{{ route('register') }}">{{ __('Registrati') }}</a>
         </li>
         @endif
         @else

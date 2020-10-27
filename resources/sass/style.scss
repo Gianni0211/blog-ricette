@@ -47,7 +47,7 @@ h3 {
 }
 
 .btn-nav {
-    color:white;
+    color:white !important;
     background-color: var(--colore-primario);
     border-color: white;
 }
@@ -211,7 +211,7 @@ h3 {
   }
 
   .top-login {
-      margin-top:100px;
+      margin-top:180px;
   }
 
 
@@ -247,3 +247,10 @@ button.btn-edit {
     color: var(--colore-primario) !important;
 }
 
+a.nav-link {
+    color:#fff !important;
+}
+
+a.btn-login {
+    border: 1px solid white;
+}
