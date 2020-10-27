@@ -11,7 +11,11 @@
       <p class="lead">{{ $post->slug }} </p>
     </div>
     <div class="box2 mt-3 border-bottom pb-4 mb-md-4">
-      <h6 class="font-weight-bold text-primario h4 text-center mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, numquam?</h6>  
+      {{-- <h6 class="font-weight-bold text-primario h4 text-center mb-4"></h6> --}}
+      @foreach ($post->user->posts as $post)
+      <h6 class="font-weight-bold text-primario h4 text-center mb-4">{{ $post->title }}</h6>
+          
+      @endforeach  
     
 
       <p>
