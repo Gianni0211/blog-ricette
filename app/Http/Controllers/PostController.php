@@ -67,7 +67,7 @@ class PostController extends Controller
             'img' => $request->file('img')->store('public/img'),
             'user_id' => Auth::user()->id
         ]);
-
+     
         $tags = $request->input('tags');
         foreach($tags as $tag){
             $post->tags()->attach($tag);
@@ -75,8 +75,9 @@ class PostController extends Controller
 
         //Trovo tutti gli user
         foreach(User::all() as $user){
+            //filtro per ruolo admin
             if($user->role == 'admin'){
-                
+                //invio mail
                 Mail::to($user->email)->send(new NewPostMail($post)); 
             }
         }

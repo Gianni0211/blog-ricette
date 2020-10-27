@@ -37,6 +37,17 @@
                         <input type="file" class="form-control-file" name="img" id="img"
                             placeholder="inserisci l'immagine" aria-describedby="file">
                     </div>
+                    
+                    <div class="form-group">
+                     <select name="tags[]" class="custom-select" multiple >
+                       @foreach ($tags as $tag)
+                            <option value="{{$tag->id}}">{{$tag->name}}</option>
+                       @endforeach
+                       
+                      
+                      </select>
+                    </div>
+                    
 
                     <button type="submit" class="btn-custom p-3 text-uppercase">Crea nuovo articolo</button>
                 </form>
