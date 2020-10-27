@@ -18,7 +18,7 @@
       @endforeach  
     
 
-      <p>
+      {{-- <p>
         <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario" href="#!">tag</a>
       </p>
       <p>
@@ -29,7 +29,7 @@
       </p>
       <p>
         <i class="fas fa-hotdog text-primario h4"></i> <a class="test-secondario" href="#!">tag</a>
-      </p>
+      </p> --}}
     </div>
 
   </div>

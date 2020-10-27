@@ -91,6 +91,9 @@
 
 
           </div>
+
+          {{-- SIDEBAR --}}
+          
           <div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar">
 
             <div class=" p-3 border-bottom text-center">
@@ -103,9 +106,9 @@
               
               @foreach ($lastPosts as $lastPost)
               <p>
-              <i class="fa fa-user text-primario h4"></i> <a class="test-secondario" href="{{route('post.show', $lastPost)}}">{{$lastPost->title}}</a>
+              <i class="fas fa-user text-primario h4"></i> <a class="test-secondario" href="{{route('post.show', $lastPost)}}">{{$lastPost->title}}</a>
               </p>
-             
+              
              
               @endforeach
             </div>
