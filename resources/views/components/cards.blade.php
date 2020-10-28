@@ -13,7 +13,8 @@
     </div>
     <div class="col-md-5">
         <h3>{{ $post->title }}</h3>
-        <p>{{ $post->body }}</p>
+        <p class="display-5">{{ $post->slug }}</p>
+        <p>{{ substr($post->body,0,300) }} [...]</p>
         <p class="lead font-weight-bold mb-4"><strong>Autore:</strong> {{ $post->user->name }}</p>
         <a class="btn-custom p-3 mt-sm-3 mt-md-3 text-decoration-none" href="{{ route('post.show', ['post' => $post]) }}">Scopri di più</a>
     </div>
