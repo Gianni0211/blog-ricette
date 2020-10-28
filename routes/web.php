@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::resource('post', PostController::class);
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('/category/{tag}', [CategoryController::class, 'index'])->name('category.index');
 
 
 Route::middleware(['auth'])->group(function () {

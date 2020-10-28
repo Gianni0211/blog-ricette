@@ -70,16 +70,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto text-white">
           <li class="nav-item">
-            <a class="nav-link" href="#">PRIMI</a>
+            <a class="nav-link" href="{{ route('category.index', ['tag' => 1]) }}">PRIMI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">SECONDI</a>
+            <a class="nav-link" href="{{ route('category.index', ['tag' => 2]) }}">SECONDI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTORNI</a>
+            <a class="nav-link" href="{{ route('category.index', ['tag' => 3]) }}">CONTORNI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">DOLCI</a>
+            <a class="nav-link" href="{{ route('category.index', ['tag' => 4]) }}">DOLCI</a>
           </li>
         </ul>
       </div>

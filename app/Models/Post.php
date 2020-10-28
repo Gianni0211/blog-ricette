@@ -49,5 +49,20 @@ class Post extends Model
 
         return $this->belongsToMany(Tag::class);
     }
+
+    static function postTag(Tag $tag){
+
+        $category = self::all();
+
+        $arr = [];
+
+        foreach ($category as $cat) {
+           if($cat->tags->contains($tag)){
+               array_push($arr, $cat);
+           } 
+            
+        }
+        return $arr;
+    }
     
 }
