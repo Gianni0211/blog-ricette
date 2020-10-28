@@ -52,17 +52,17 @@ class Post extends Model
 
     static function postTag(Tag $tag){
 
-        $category = self::all();
+        $posts = self::all();  //tutti i post del database
 
-        $arr = [];
+        $filteredPosts = []; //array filtrato dai tag presenti
 
-        foreach ($category as $cat) {
-           if($cat->tags->contains($tag)){
-               array_push($arr, $cat);
+        foreach ($posts as $post) { //filtra i post controllando che il tag corrisponde $tag
+           if($post->tags->contains($tag)){
+               array_push($filteredPosts, $post);
            } 
             
         }
-        return $arr;
+        return $filteredPosts;
     }
     
 }
