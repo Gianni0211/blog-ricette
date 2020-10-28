@@ -61,7 +61,7 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-secondario fixed-top border-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondario border-navbar">
     <div class="container">
     <a class="navbar-brand" href="{{route('post.index')}}"><img src="{{Storage::url('img/cook.png')}}" class="img-fluid img-logo" alt="logo">Food Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,9 +81,12 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('category.index', ['tag' => 4]) }}">DOLCI</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link btn-nav mx-5  text-white" href="{{route('post.create')}}">CREA NUOVO POST</a>
+            
+          </li>
         </ul>
       </div>
-      <a class="nav-link btn-nav mx-5  text-white" href="{{route('post.create')}}">CREA NUOVO POST</a>
 
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->

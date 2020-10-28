@@ -215,9 +215,9 @@ h3 {
   }
 
 
-  .bg-slider {
-      background-image: url("/img/prova.jpg");
-  } 
+//   .bg-slider {
+//       background-image: url("/img/prova.jpg");
+//   } 
 
   button.btn-delete {
       color:white;
@@ -287,3 +287,11 @@ p.tag {
     border-radius: 5px;
     background: white;
 }
+
+.header {
+   height: 30vh;
+background-image: url('/img/prova.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+ }

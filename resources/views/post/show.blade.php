@@ -1,5 +1,5 @@
 <x-app>
-    <div class="container top-login">
+    <div class="container top">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-9 col-xl-9">
                 <h1 class="text-primario mb-3">{{ $post->title }}</h1>

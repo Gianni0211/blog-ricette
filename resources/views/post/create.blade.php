@@ -1,6 +1,6 @@
 <x-app>
 
-    <div class="container top-login">
+    <div class="container top">
         <div class="row">
             <div class="col-12">
 

@@ -11118,10 +11118,6 @@ h3 {
   margin-top: 180px;
 }
 
-.bg-slider {
-  background-image: url("/img/prova.jpg");
-}
-
 button.btn-delete {
   color: white;
   background-color: #c75c5c;
@@ -11183,5 +11179,13 @@ p.tag {
   padding: 8px;
   border-radius: 5px;
   background: white;
+}
+
+.header {
+  height: 30vh;
+  background-image: url("/img/prova.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 

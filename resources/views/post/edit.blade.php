@@ -1,5 +1,5 @@
 <x-app>
-    <div class="container top-login">
+    <div class="container top">
         <div class="row">
             <div class="col-12 ">
                 <h1 class="text-primario mb-5">Modifica il tuo post</h1>

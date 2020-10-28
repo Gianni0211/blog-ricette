@@ -6,7 +6,7 @@
 <div class="col-12 col-md-12 col-lg-3 mt-5 border-sidebar bg-sidebar">
 
     <div class=" p-3 border-bottom text-center">
-      <img src="Media/mica_cook.png" class="img-fluid mb-md-4" alt="">
+      
       <h3 class="mt-2 text-center mb-3">{{ $post->user->name }}</h3>
       <p class="lead"><span class="font-weight-bold">Utente dal:</span> {{ explode(' ',$post->user->created_at)[0] }} </p>
     </div>
@@ -16,7 +16,7 @@
       <div class="text-left  border-bottom">
         @foreach ($post->user->posts as $post)
         
-        <a href="{{ route('post.show', ['post' => $post]) }}" class="font-weight-bold test-secondario ml-2 mb-4 d-block "><i class="fas fa-utensils fa-lg text-primario mr-2"></i> {{ $post->title }}</a>
+        <a href="{{ route('post.show', ['post' => $post]) }}" class="font-weight-bold test-secondario ml-2 mb-4 d-block text-decoration-none"><i class="fas fa-utensils fa-lg text-primario mr-2"></i> {{ $post->title }}</a>
             
         @endforeach 
       </div>

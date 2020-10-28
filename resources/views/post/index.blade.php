@@ -88,23 +88,31 @@
             <div class="col-12 col-md-12 col-lg-3 col-xl-3 mt-5 border-sidebar">
                 <div class="container sticky-top mt-5">
                         
-                        <div class=" p-3 border-bottom text-center mt-5">
+                        {{-- <div class=" p-3 border-bottom text-center mt-5">
                             
                             <h3 class="mt-2 text-center mb-3">Ultimo post caricato</h3>
                             <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur fugiat corporis
                                 veritatis, quidem distinctio odio. </p>
-                        </div>
-                        <div class="box2 mt-3 border-bottom mt-5 pb-4 mb-md-4">
-                            <h6 class="font-weight-bold text-primario h4 text-center mb-4">Ultime ricette</h6>
-                
-                            @foreach ($lastPosts as $lastPost)
-                                <p>
-                                    <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario"
-                                        href="{{ route('post.show', $lastPost) }}">{{ $lastPost->title }}</a>
-                                </p>
-                               
-                            @endforeach
-                        </div>
+                        </div> --}}
+                        <div>
+                            <div class="box2 mt-3 border-bottom mt-5 pb-4 mb-md-4">
+                                <h6 class="font-weight-bold text-primario h4 text-center mb-4">Ultime ricette</h6>
+                    
+                                @foreach ($lastPosts as $lastPost)
+                                    <p>
+                                        <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario"
+                                            href="{{ route('post.show', $lastPost) }}">{{ $lastPost->title }}</a>
+                                    </p>
+                                   
+                                @endforeach
+                            </div>
+                            {{-- <h3 class="text-center my-4">Etichette</h3>
+                            @foreach ($tags as $tag)
+                                <div class="d-flex justify-content-start align-items-center">
+                                <p class="test-secondario tag ml-2" ><i class="fas fa-tags text-primario mr-1 fa-flip-horizontal "></i> {{ $tag->name }}</p>
+                                </div>
+                            @endforeach --}}
+                          </div>
                 
                 </div>
             </div>
