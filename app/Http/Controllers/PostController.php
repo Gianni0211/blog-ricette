@@ -37,7 +37,10 @@ class PostController extends Controller
         //post per pagina       ↓
         $posts = Post::paginate(4);
         $lastPosts = Post::orderBy('created_at', 'desc')->paginate(4);
-        return view('post.index', compact('posts'), ['post'=>$posts, 'lastPosts' => $lastPosts, 'mostLikedPosts' => Post::mostLikedFour()->toArray()]);
+        $tags = Tag::all();
+        
+        
+        return view('post.index', compact('posts'), ['post'=>$posts, 'lastPosts' => $lastPosts, 'mostLikedPosts' => Post::mostLikedFour()->toArray(), 'tags'=>$tags]);
     }
 
     /**

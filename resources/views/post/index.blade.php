@@ -100,18 +100,18 @@
                     
                                 @foreach ($lastPosts as $lastPost)
                                     <p>
-                                        <i class="fas fa-utensils text-primario h4"></i> <a class="test-secondario"
+                                        <i class="fas fa-utensils text-primario my-auto"></i> <a class="test-secondario text-decoration-none"
                                             href="{{ route('post.show', $lastPost) }}">{{ $lastPost->title }}</a>
                                     </p>
                                    
                                 @endforeach
                             </div>
-                            {{-- <h3 class="text-center my-4">Etichette</h3>
+                            <h3 class="text-center my-4">Etichette</h3>
                             @foreach ($tags as $tag)
                                 <div class="d-flex justify-content-start align-items-center">
                                 <p class="test-secondario tag ml-2" ><i class="fas fa-tags text-primario mr-1 fa-flip-horizontal "></i> {{ $tag->name }}</p>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                           </div>
                 
                 </div>

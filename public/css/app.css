@@ -11183,9 +11183,21 @@ p.tag {
 
 .header {
   height: 30vh;
-  background-image: url("/img/prova.jpg");
+  background-image: url("/img/slider1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.img-card {
+  width: 100%;
+}
+
+.card-h {
+  height: 280px;
+}
+
+p.height-p {
+  min-height: 50px;
 }
 
