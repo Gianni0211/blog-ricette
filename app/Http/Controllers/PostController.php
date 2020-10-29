@@ -146,6 +146,9 @@ class PostController extends Controller
     {
 
         if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id) {
+          
+            $user = User::find(Auth::user()->id);
+            $user->likes()->detach($post);
             $post->delete();
             return redirect(route('post.index'));
         }
