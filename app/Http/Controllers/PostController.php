@@ -95,7 +95,14 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('post.show', compact('post'));
+        $tag = $post->tags ;
+        if(count($tag) > 0 ){
+            $tags = Post::postTag($tag[0]) ;
+        $relatedPosts = array_slice( $tags ,0,4) ;
+      
+        return view('post.show', ['post'=> $post, 'relatedPosts' => $relatedPosts]);
+        }
+        return view('post.show', ['post'=> $post ,'relatedPosts' => 0]);
     }
 
     /**

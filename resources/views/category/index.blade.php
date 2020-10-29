@@ -1,7 +1,7 @@
 <x-app>
 
     <x-header 
-    title="categoria"
+    title="{{ucfirst($category->name)}}"
     />
 
 

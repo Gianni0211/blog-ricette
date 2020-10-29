@@ -10,9 +10,9 @@ class CategoryController extends Controller
 {
     public function index(Tag  $tag)
     {
-      $posts = Post::postTag( $tag);
+      $posts = Post::postTag($tag);
       
-      return view('category.index', compact('posts'));
+      return view('category.index', ['posts'=> $posts, 'category' => $tag]);
         
        
        
