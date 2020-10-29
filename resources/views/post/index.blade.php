@@ -108,9 +108,10 @@
                             </div>
                             <h3 class="text-center my-4">Etichette</h3>
                             @foreach ($tags as $tag)
-                                <div class="d-flex justify-content-start align-items-center">
+                        <a class="text-decoration-none" href="{{route('category.index', $tag)}}"> <div class="d-flex justify-content-start align-items-center">
                                 <p class="test-secondario tag ml-2" ><i class="fas fa-tags text-primario mr-1 fa-flip-horizontal "></i> {{ $tag->name }}</p>
-                                </div>
+                                </div></a>
+                               
                             @endforeach
                           </div>
                 

@@ -35,12 +35,13 @@ class PostController extends Controller
        
         
         //post per pagina       ↓
-        $posts = Post::paginate(4);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(4);
         $lastPosts = Post::orderBy('created_at', 'desc')->paginate(4);
+        $mostLikedPosts =  Post::mostLikedFour()->toArray();
         $tags = Tag::all();
         
         
-        return view('post.index', compact('posts'), ['post'=>$posts, 'lastPosts' => $lastPosts, 'mostLikedPosts' => Post::mostLikedFour()->toArray(), 'tags'=>$tags]);
+        return view('post.index', compact('posts'), compact('posts', 'lastPosts', 'mostLikedPosts', 'tags'));
     }
 
     /**
@@ -100,10 +101,10 @@ class PostController extends Controller
     {
         $tag = $post->tags ;
         if(count($tag) > 0 ){
-            $tags = Post::postTag($tag[0]) ;
+        $tags = Post::postTag($tag[0]) ;
         $relatedPosts = array_slice( $tags ,0,4) ;
       
-        return view('post.show', ['post'=> $post, 'relatedPosts' => $relatedPosts]);
+        return view('post.show', compact('post', 'relatedPosts'));
         }
         return view('post.show', ['post'=> $post ,'relatedPosts' => 0]);
     }
@@ -129,6 +130,7 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
+       
         if (Auth::user()->role == 'admin' || $post->user_id == Auth::user()->id) {
             $post->update($request->all());
         }
